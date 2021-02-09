@@ -1,12 +1,15 @@
 <template>
   <div id="app-wc">
-    <router-view />
+    {{$store.state.msg}}
   </div>
 </template>
 
 <script>
-import router from './router'
+import store from './store'
 export default {
-	router
+	store,
+	mounted() {
+		this.$store.commit('check')
+	}
 }
 </script>
